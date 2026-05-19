@@ -1,0 +1,70 @@
+# =========================
+# Python
+# =========================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# =========================
+# Environment Variables
+# =========================
+
+.env
+.env.*
+!.env.example
+
+# =========================
+# Logs
+# =========================
+
+*.log
+
+# =========================
+# IDE / Editor
+# =========================
+
+.vscode/
+.idea/
+
+# =========================
+# OS Files
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+# Python Tool Cache
+# =========================
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# =========================
+# Coverage
+# =========================
+
+.coverage
+htmlcov/
+
+# =========================
+# Docker / MongoDB Data
+# =========================
+
+mongo-data/
+mongodb-data/
+docker/mongodb/data/
+
+# =========================
+# Temporary Files
+# =========================
+
+tmp/
+temp/
