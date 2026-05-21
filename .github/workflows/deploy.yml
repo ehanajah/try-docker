@@ -16,8 +16,8 @@ jobs:
           cd ~/apps/try-docker
           
           cat > .env <<'EOF'
-          MONGO_ROOT_USERNAME=${{ secrets.MONGO_ROOT_USERNAME }}
-          MONGO_ROOT_PASSWORD=${{ secrets.MONGO_ROOT_PASSWORD }}
+          MONGO_INITDB_ROOT_USERNAME=${{ secrets.MONGO_ROOT_USERNAME }}
+          MONGO_INITDB_ROOT_PASSWORD=${{ secrets.MONGO_ROOT_PASSWORD }}
           MONGO_DB=${{ vars.MONGO_DB }}
           DB_NAME=${{ vars.DB_NAME }}
           MONGO_APP_USERNAME=${{ secrets.MONGO_APP_USERNAME }}
