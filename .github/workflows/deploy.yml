@@ -18,6 +18,7 @@ jobs:
           MONGO_ROOT_USERNAME: ${{ secrets.MONGO_ROOT_USERNAME }}
           MONGO_ROOT_PASSWORD: ${{ secrets.MONGO_ROOT_PASSWORD }}
           MONGO_DB: ${{ vars.MONGO_DB }}
+          DB_NAME: ${{ vars.DB_NAME }}
           MONGO_APP_USERNAME: ${{ secrets.MONGO_APP_USERNAME }}
           MONGO_APP_PASSWORD: ${{ secrets.MONGO_APP_PASSWORD }}
           MONGO_URI: ${{ secrets.MONGO_URI }}

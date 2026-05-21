@@ -10,8 +10,6 @@ services:
 
   mongodb:
     image: mongo:7
-    env_file:
-      - ../../.env
 
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
