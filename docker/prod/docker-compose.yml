@@ -9,7 +9,7 @@ services:
       DB_NAME: ${DB_NAME}
 
   mongodb:
-    image: mongo:7
+    image: mongo:4.4
 
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
