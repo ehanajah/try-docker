@@ -8,18 +8,12 @@ services:
 
     environment:
       APP_ENV: production
-    #   MONGO_URI: ${MONGO_URI}
-    #   DB_NAME: ${DB_NAME}
 
   mongodb:
     image: mongo:4.4
 
     env_file:
       - ../../.env
-
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
 
     volumes:
       - mongo-prod-data:/data/db
