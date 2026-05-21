@@ -26,10 +26,7 @@ jobs:
           EOF
           
           git pull
-          docker compose \
-            --env-file .env \
-            -f docker/prod/docker-compose.yml \
-            up -d --build
+          docker compose -f docker/prod/docker-compose.yml up -d --build
 
       # - name: Deploy via SSH
       #   uses: appleboy/ssh-action@v1.0.3
