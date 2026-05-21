@@ -11,11 +11,11 @@ jobs:
     # runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Create .env file
+      - name: Deploy
         run: |
-          cat <<EOF > docker/prod/.env
+          cd ~/apps/try-docker
+          
+          cat <<EOF > .env
           MONGO_ROOT_USERNAME=${{ secrets.MONGO_ROOT_USERNAME }}
           MONGO_ROOT_PASSWORD=${{ secrets.MONGO_ROOT_PASSWORD }}
           MONGO_DB=${{ vars.MONGO_DB }}
@@ -24,9 +24,8 @@ jobs:
           MONGO_APP_PASSWORD=${{ secrets.MONGO_APP_PASSWORD }}
           MONGO_URI=${{ secrets.MONGO_URI }}
           EOF
-
-      - name: Deploy Docker
-        run: |
+          
+          git pull
           docker compose -f docker/prod/docker-compose.yml up -d --build
 
       # - name: Deploy via SSH
