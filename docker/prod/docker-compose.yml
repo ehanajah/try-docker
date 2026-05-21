@@ -8,8 +8,8 @@ services:
 
     environment:
       APP_ENV: production
-      MONGO_URI: ${MONGO_URI}
-      DB_NAME: ${DB_NAME}
+    #   MONGO_URI: ${MONGO_URI}
+    #   DB_NAME: ${DB_NAME}
 
   mongodb:
     image: mongo:4.4
