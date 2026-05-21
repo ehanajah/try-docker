@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build containers
+        run: docker compose -f docker/prod/docker-compose.yml up -d --build
+
+      - name: Wait for backend
+        run: |
+          until curl -f http://localhost/health; do
+            sleep 2
+          done
+
+      - name: Test API
+        run: |
+          curl -f http://localhost/api/books
+
+      - name: Show logs if failed
+        if: failure()
+        run: docker compose -f docker/prod/docker-compose.yml logs
