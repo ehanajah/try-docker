@@ -1,12 +1,9 @@
 import os
-from dotenv import load_dotenv
 
 env = os.getenv("APP_ENV", "development")
-print(env)
 
-if env == "production":
-    load_dotenv(".env.production")
-else:
+if env != "production":
+    from dotenv import load_dotenv
     load_dotenv(".env")
 
 class Config:
